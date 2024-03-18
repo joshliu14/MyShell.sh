@@ -18,7 +18,7 @@ gcc -o tamidsh tamidsh.c
 
 ./tamidsh
 
-3. **Interact**: Enter commands at the prompt and press Enter to execute.
+3. **Interact**: Enter commands at the prompt and press Enter to execute. Enter `exit` to exit the shell.
 
 ## Configuration
 - Customize the shell behavior by editing system-wide or user-specific configuration files.

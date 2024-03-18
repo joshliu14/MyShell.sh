@@ -1,6 +1,6 @@
-# tamidsh: A Simple Shell Implementation in C
+# tamidsh: Shell Implementation in C
 
-tamidsh is a lightweight, minimalist shell implemented in C. It provides basic shell functionalities such as parsing commands, executing them, handling pipes, and logging executed commands.
+tamidsh is a shell implemented in C. It provides basic shell functionalities such as parsing commands, executing them, handling pipes, and logging executed commands.
 
 ## Features
 - **Command Parsing**: Parses user input into commands and arguments.

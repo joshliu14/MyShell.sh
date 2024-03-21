@@ -1,6 +1,6 @@
-# tamidsh: Shell Implementation in C
+# myshell: Shell Implementation in C
 
-tamidsh is a shell implemented in C. It provides basic shell functionalities such as parsing commands, executing them, handling pipes, and logging executed commands.
+myshell is a shell implemented in C. It provides basic shell functionalities such as parsing commands, executing them, handling pipes, and logging executed commands.
 
 ## Features
 - **Command Parsing**: Parses user input into commands and arguments.
@@ -12,18 +12,18 @@ tamidsh is a shell implemented in C. It provides basic shell functionalities suc
 ## Usage
 1. **Compilation**: Compile the program using any C compiler (`gcc` recommended).
 
-gcc -o tamidsh tamidsh.c
+gcc -o myshell myshell.c
 
 2. **Run the Shell**: Execute the compiled binary.
 
-./tamidsh
+./myshell
 
 3. **Interact**: Enter commands at the prompt and press Enter to execute. Enter `exit` to exit the shell.
 
 ## Configuration
 - Customize the shell behavior by editing system-wide or user-specific configuration files.
-- System-wide configuration: `/etc/tamidsh`
-- User-specific configuration: `~/.tamidsh_rc`
+- System-wide configuration: `/etc/myshell`
+- User-specific configuration: `~/.myshell_rc`
 
 ## Logging
-tamidsh provides logging functionality to keep track of executed commands. Log entries include the timestamp, executed command, and its execution status (success or failure). The log file is located at `$HOME/.tamidsh.log`.
+myshell provides logging functionality to keep track of executed commands. Log entries include the timestamp, executed command, and its execution status (success or failure). The log file is located at `$HOME/.myshell.log`.

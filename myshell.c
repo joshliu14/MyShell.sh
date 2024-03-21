@@ -6,7 +6,7 @@
 #include <sys/wait.h>
 #include <time.h>
 
-#define LOG_FILE_PATH "$HOME/.tamidsh.log"
+#define LOG_FILE_PATH "$HOME/.myshell.log"
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
 #define MAX_CONFIG_LINE_LENGTH 256
@@ -52,7 +52,7 @@ int spawn_proc (int in, int out, struct command *cmd)
 
 		if (execvp (cmd->argv [0], (char * const *)cmd->argv) < 0)
 		{
-			printf("tamidsh: command not found: %s\n", cmd->argv[0]);
+			printf("myshell: command not found: %s\n", cmd->argv[0]);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -82,7 +82,7 @@ void fork_pipes (int n, struct command *cmd)
 
 	if (execvp (cmd [i].argv [0], (char * const *)cmd [i].argv) < 0)
 	{
-		printf("tamidsh: command not found: %s\n", cmd[i].argv[0]);
+		printf("myshell: command not found: %s\n", cmd[i].argv[0]);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -150,7 +150,7 @@ void write_log(const char *command, const char *status) {
 
     // Open the log file
     char log_file_path[256];
-    snprintf(log_file_path, sizeof(log_file_path), "%s/.tamidsh.log", getenv("HOME"));
+    snprintf(log_file_path, sizeof(log_file_path), "%s/.myshell.log", getenv("HOME"));
     FILE *log_file = fopen(log_file_path, "a");
     if (log_file == NULL) {
         perror("Failed to open log file");
@@ -210,13 +210,13 @@ void parseConfigFile(const char *filename, struct Config *config) {
 // Function to parse both system-wide and user-specific configuration files
 void parseConfiguration(struct Config *config) {
     // Parse system-wide configuration file
-    parseConfigFile("/etc/tamidsh", config);
+    parseConfigFile("/etc/myshell", config);
 
     // Parse user-specific configuration file
     char *home_dir = getenv("HOME");
     if (home_dir != NULL) {
         char user_config_file[256];
-        snprintf(user_config_file, sizeof(user_config_file), "%s/.tamidsh_rc", home_dir);
+        snprintf(user_config_file, sizeof(user_config_file), "%s/.myshell_rc", home_dir);
         parseConfigFile(user_config_file, config);
     }
 }
@@ -292,7 +292,7 @@ int main ()
     
 	char input[100];
 	struct command cmd[20];
-	printf("Welcome to tamidsh\n");
+	printf("Welcome to myshell\n");
 	while (1) {
 		memset(input, 0, sizeof(input));
 		if (strlen(config.custom_prompt) != 0) {
